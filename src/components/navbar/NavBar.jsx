@@ -4,7 +4,7 @@ import { FaTwitter, FaXmark } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
-
+import '../../components/navbar/nav.css'
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +22,7 @@ const NavBar = () => {
         { path: "/contact", link: "Contact" }
     ]
     return (
-        <header className="bg-black text-white fixed top-0 right-0 left-0">
+        <header className="bg-black text-white fixed top-0 right-0 left-0 z-10">
             <nav className="p-4 max-w-7xl mx-auto flex justify-between items-center">
                 <a href="/" className="text-xl font-bold text-white">Design<span className="text-orange-500">DK</span></a>
 
@@ -30,7 +30,15 @@ const NavBar = () => {
                 <ul className="md:flex gap-12 hidden text-lg">
                     {
                         navItem.map(({ path, link }) => <li className="text-white" key={path}>
-                            <NavLink to={path}>{link}</NavLink>
+                            <NavLink
+                                className={({ isActive, isPending }) =>
+                                    isActive
+                                        ? "active"
+                                        : isPending
+                                            ? "pending"
+                                            : ""
+                                }
+                                to={path}>{link}</NavLink>
                         </li>)
                     }
                 </ul>
@@ -54,7 +62,7 @@ const NavBar = () => {
             </nav>
             {/* only mobile device nav menu */}
             <div>
-                <ul className={`md:hidden gap-12 block text-lg space-y-4 px-4 py-6 mt-14 bg-white text-black ${isMenuOpen ? "fixed top-0 left-0 w-full transition-all duration-150 ease-out" : "hidden"}`}>
+                <ul className={`md:hidden gap-12 block text-lg space-y-4 px-4 py-6 mt-14 bg-orange-200 text-black ${isMenuOpen ? "fixed top-0 left-0 w-full transition-all duration-150 ease-out" : "hidden"}`}>
                     {
                         navItem.map(({ path, link }) => <li className="" key={path}>
                             <NavLink onClick={toggleMenu} to={path}>{link}</NavLink>
@@ -62,7 +70,7 @@ const NavBar = () => {
                     }
                 </ul>
             </div>
-        </header>
+        </header >
     );
 };
 

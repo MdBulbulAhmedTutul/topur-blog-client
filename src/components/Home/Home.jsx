@@ -1,8 +1,9 @@
+import Carusel from "../carusel/Carusel";
 
 const Home = () => {
     return (
         <div>
-            <h2>this is home page</h2>
+            <Carusel></Carusel>
         </div>
     );
 };
