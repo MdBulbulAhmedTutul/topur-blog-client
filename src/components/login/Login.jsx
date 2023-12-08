@@ -1,16 +1,41 @@
 import { Link } from 'react-router-dom';
 import loginImage from '../../assets/images/carusel/register.jpg';
 import { IoLogoGoogle } from "react-icons/io";
+import { useContext } from 'react';
+import { AuthContext } from '../provider/AuthProvider';
+import Swal from 'sweetalert2';
 
 
 const Login = () => {
+    const { loginUser } = useContext(AuthContext)
+    const handleLogin = event => {
+        event.preventDefault();
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        loginUser(email, password)
+        .then(result => {
+            console.log(result.user);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Successfull Login",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        })
+        .catch(error => {
+            console.error(error)
+        });
+    }
     return (
         <div className='flex justify-between items-center flex-col lg:flex-row max-w-7xl mx-auto px-4'>
             <div className='flex-1'>
                 <img src={loginImage} alt="" />
             </div>
-            <div className='flex-1 w-full'>
-                <form>
+            <div className='flex-1 w-full bg-white px-4 py-4 shadow-xl rounded-lg mt-10'>
+                <form onSubmit={handleLogin}>
                     <h2 className='text-4xl font-semibold mb-4'>Please Login Now</h2>
                     <div className="form-control">
                         <label className="label">

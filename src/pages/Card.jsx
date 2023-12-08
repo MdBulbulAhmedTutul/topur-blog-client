@@ -3,7 +3,7 @@
 const Card = ({ service }) => {
     // eslint-disable-next-line react/prop-types
     const { image, published_date, title } = service;
-    console.log(service)
+    // console.log(service)
     return (
         <div className="shadow-xl rounded-lg p-2">
             <img className="w-full rounded-md" src={image} alt="" />

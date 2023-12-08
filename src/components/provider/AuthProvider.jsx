@@ -12,7 +12,7 @@ const AuthProvider = ({ children }) => {
     const provider = new GoogleAuthProvider();
 
     const [user, setUser] = useState(null);
-    const [loading, setLoading] = (true);
+    const [loading, setLoading] = useState(true);
 
     // create user
     const createUser = (email, password) => {
@@ -21,16 +21,16 @@ const AuthProvider = ({ children }) => {
     }
 
     // manage user 
-    useEffect(() =>{
-        const unsubsCribe = onAuthStateChanged(user, currentUser => {
+    useEffect(() => {
+        const unsubsCribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
-            console.log(currentUser)
-            setLoading(false)
+            console.log('current user', currentUser);
+            setLoading(false);
         })
         return () => {
             unsubsCribe()
         }
-    },[setLoading,user])
+    }, [auth])
 
     // login user 
     const loginUser = (email, password) => {

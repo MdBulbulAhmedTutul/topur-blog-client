@@ -5,9 +5,18 @@ import { FaSquareInstagram } from "react-icons/fa6";
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
 import '../../components/navbar/nav.css'
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider";
 
 const NavBar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const handleLogOut = () => {
+        logOut()
+        .then()
+        .catch()
+    }
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -51,8 +60,20 @@ const NavBar = () => {
                     <a href="/" className="hover:text-orange-500 text-lg"><FaTwitter></FaTwitter></a>
                     <a href="/" className="hover:text-orange-500 text-lg"><FaSquareInstagram></FaSquareInstagram></a>
                     <Link to="/login">
-                        <button className="bg-orange-600 text-white font-semibold rounded-sm px-4 py-2 hover:bg-white hover:text-black transition-all duration-200 ease-in">Login</button>
+                        {
+                            user ?
+                                <button onClick={handleLogOut} className="bg-orange-600 text-white font-semibold rounded-sm px-4 py-2 hover:bg-white hover:text-black transition-all duration-200 ease-in">Log Out</button>
+                                :
+                                <button className="bg-orange-600 text-white font-semibold rounded-sm px-4 py-2 hover:bg-white hover:text-black transition-all duration-200 ease-in">Login</button>
+                        }
+                        
                     </Link>
+                    {
+                            user ?
+                            <img className="w-[50px] rounded-full" src={user.photoURL} alt="" />
+                            :
+                            []
+                        }
                 </div>
 
                 {/* mobile menu icon */}
