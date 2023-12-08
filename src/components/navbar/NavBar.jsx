@@ -25,7 +25,7 @@ const NavBar = () => {
         <header className="bg-black text-white fixed top-0 right-0 left-0 z-10">
             <nav className="p-4 max-w-7xl mx-auto flex justify-between items-center">
                 <Link to="/">
-                    <h2 className="text-xl font-bold text-white">Design<span className="text-orange-500">DK</span></h2>
+                    <h2 className="text-xl font-bold text-white">Tutul<span className="text-orange-500">DS</span></h2>
                 </Link>
 
                 {/* navitems for lg device */}

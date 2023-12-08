@@ -32,7 +32,7 @@ const Carusel = () => {
                         <h2 className='text-4xl font-bold mb-2'>Have a Nice Tour <br /> Yor Plan</h2>
                         <p className='mb-1'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br /> at aut dolore ratione ipsum voluptate modi!</p>
                         <Link to="/about">
-                            <button className='bg-[#ff3438] text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
+                            <button className='bg-orange-600 text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
                         </Link>
                     </div>
                     <img className='w-full h-[750px]' src={carusel1} alt="" />
@@ -43,7 +43,7 @@ const Carusel = () => {
                         <h2 className='text-4xl font-bold mb-2'>Have a Nice Tour <br /> Yor Plan</h2>
                         <p className='mb-1'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br /> at aut dolore ratione ipsum voluptate modi!</p>
                         <Link to="/about">
-                            <button className='bg-[#ff3438] text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
+                            <button className='bg-orange-600 text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
                         </Link>
                     </div>
                     <img className='w-full h-[750px]' src={carusel2} alt="" />
@@ -54,7 +54,7 @@ const Carusel = () => {
                         <h2 className='text-4xl font-bold mb-2'>Have a Nice Tour <br /> Yor Plan</h2>
                         <p className='mb-1'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br /> at aut dolore ratione ipsum voluptate modi!</p>
                         <Link to="/about">
-                            <button className='bg-[#ff3438] text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
+                            <button className='bg-orange-600 text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
                         </Link>
                     </div>
                     <img className='w-full h-[750px]' src={carusel3} alt="" />
@@ -65,7 +65,7 @@ const Carusel = () => {
                         <h2 className='text-4xl font-bold mb-2'>Have a Nice Tour <br /> Yor Plan</h2>
                         <p className='mb-1'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.<br /> at aut dolore ratione ipsum voluptate modi!</p>
                         <Link to="/about">
-                            <button className='bg-[#ff3438] text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
+                            <button className='bg-orange-600 text-white font-bold rounded-lg px-4 py-2 hover:bg-white hover:text-black transition-all ease-in duration-200'>Learn More</button>
                         </Link>
                     </div>
                     <img className='w-full h-[750px]' src={carusel4} alt="" />
