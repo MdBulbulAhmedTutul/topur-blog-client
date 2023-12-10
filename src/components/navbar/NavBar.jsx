@@ -40,7 +40,7 @@ const NavBar = () => {
                 {/* navitems for lg device */}
                 <ul className="md:flex gap-12 hidden text-lg">
                     {
-                        navItem.map(({ path, link }) => <li className="text-white" key={path}>
+                        navItem.map(({ path, link }) => <li className="text-white hover:text-orange-300" key={path}>
                             <NavLink
                                 className={({ isActive, isPending }) =>
                                     isActive

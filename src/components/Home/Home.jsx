@@ -1,4 +1,5 @@
 import About from "../../pages/About";
+import Contact from "../../pages/Contact";
 import Services from "../../pages/Services";
 import Carusel from "../carusel/Carusel";
 
@@ -13,6 +14,9 @@ const Home = () => {
             </div>
             <div>
                 <Services></Services>
+            </div>
+            <div>
+                <Contact></Contact>
             </div>
         </div>
     );

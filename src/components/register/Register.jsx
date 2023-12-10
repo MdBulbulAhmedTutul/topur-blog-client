@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const Register = () => {
     // const [error, setEror] = useState(true);
-    const { createUser, updateProfilePicture } = useContext(AuthContext)
+    const { createUser, updateProfilePicture, googleLogin} = useContext(AuthContext)
     const handleRegister = event => {
         event.preventDefault();
         const form = event.target;
@@ -20,7 +20,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result.user);
-                updateProfilePicture(name, photo)
+                updateProfilePicture(name, photo);
                 Swal.fire({
                     position: "top-end",
                     icon: "success",
@@ -34,6 +34,22 @@ const Register = () => {
                 console.error(eror);
                 // setEror(eror)
             })
+    }
+    const handleGoogleLogin = () => {
+        googleLogin()
+        .then(result => {
+            console.log(result.user);
+            Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Successfull Login",
+                showConfirmButton: false,
+                timer: 1500
+            });
+        })
+        .catch(error => {
+            console.error(error)
+        })
     }
     return (
         <div className='flex justify-between items-center flex-col lg:flex-row max-w-7xl mx-auto px-4 mt-16'>
@@ -69,7 +85,7 @@ const Register = () => {
                     </div>
                     <input className='w-full my-4 cursor-pointer bg-orange-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-orange-400' type="submit" value="Register Now" />
                 </form>
-                <button className='w-full mt-4 cursor-pointer bg-orange-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-orange-400 flex items-center justify-center'>Login With Google<IoLogoGoogle className='ml-2'></IoLogoGoogle></button>
+                <button onClick={handleGoogleLogin} className='w-full mt-4 cursor-pointer bg-orange-600 text-white font-bold px-4 py-2 rounded-lg hover:bg-orange-400 flex items-center justify-center'>Login With Google<IoLogoGoogle className='ml-2'></IoLogoGoogle></button>
                 <p className='text-center mt-3'>Dont have an account <Link className='text-orange-600 font-bold ml-2 my-2' to="/login">Login</Link></p>
                 {/* {
                     error ? <p>{error}</p>
